@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  [data-theme="light"] .btn-copy {
-    @apply btn-outline bg-neutral-100;
-  }
+:root {
+  --color-primary: #007aff;
+  --color-primary-foreground: #ffffff;
 }
 
-html,
 body {
-  height: 100%;
+  background: theme("colors.slate.50");
 }

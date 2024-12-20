@@ -1,17 +1,19 @@
-import type { Metadata } from "next";
-import { twMerge } from "tailwind-merge";
-import { DM_Sans } from "next/font/google";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import Header from "./header";
-import Footer from "./footer";
 import "./globals.css";
 
-const dm_sans = DM_Sans({ subsets: ["latin"] });
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+
+// import Footer from "./footer";
+// import Header from "./header";
+import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { twMerge } from "tailwind-merge";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kirill-Lotin tarjimon",
+  title: "Kirill-Lotin tarjimon | Кирилл-Лотин таржимон",
   description:
-    "Matnni kirill alifbosidan lotin alifbosiga va lotin alifbosidan kirill alifbosiga o'tkazish",
+    "Matnni kirill alifbosidan lotin alifbosiga va lotin alifbosidan kirill alifbosiga o'tkazish. Матнни кирилл алифбосидан лотин алифбосига ва лотин алифбосидан кирилл алифбосига ўтказиш",
 };
 
 export default function RootLayout({
@@ -21,10 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark">
-      <body className={twMerge(dm_sans.className, "flex flex-col")}>
-        <Header />
+      <body className={twMerge(inter.className, "flex flex-col")}>
+        {/* <Header /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}

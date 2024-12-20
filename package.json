@@ -11,6 +11,8 @@
   "dependencies": {
     "@next/third-parties": "^14.1.4",
     "@phosphor-icons/react": "^2.1.4",
+    "@tabler/icons-react": "^3.26.0",
+    "class-variance-authority": "^0.7.1",
     "cyrillic-latin-tanslator": "link:",
     "next": "14.1.4",
     "react": "^18",
