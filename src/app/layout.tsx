@@ -7,6 +7,7 @@ import Header from "./components/header";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { SuspenseProvider } from "@common/components/suspense";
 import { twMerge } from "tailwind-merge";
 
 const inter = Inter({
@@ -28,7 +29,9 @@ export default function RootLayout({
     <html lang="en" data-theme="light">
       <body className={twMerge(inter.className, "flex flex-col")}>
         <Header />
-        <NuqsAdapter>{children}</NuqsAdapter>
+        <NuqsAdapter>
+          <SuspenseProvider>{children}</SuspenseProvider>
+        </NuqsAdapter>
         <Footer />
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
