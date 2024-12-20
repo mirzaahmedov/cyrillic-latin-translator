@@ -7,6 +7,11 @@
   --color-primary-foreground: #ffffff;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: theme("colors.slate.50");
 }

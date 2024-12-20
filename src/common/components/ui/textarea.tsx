@@ -4,7 +4,7 @@ import type { TextareaHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
 const textAreaVariants = cva(
-  "appearance-none px-5 py-2.5 border border-slate-200",
+  "appearance-none px-5 py-4 border dark:border-slate-700 border-slate-200 hover:ring-slate-200 dark:hover:ring-slate-700 hover:ring-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:focus-visible:ring-primary rounded",
   {
     variants: {
       size: {

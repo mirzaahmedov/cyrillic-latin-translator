@@ -1,13 +1,11 @@
 import type { Config } from "tailwindcss";
+import daiyui from "daisyui";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: ["selector", '[data-theme="dark"]'],
   daisyui: {
-    themes: ["light", "dark"],
+    themes: ["dark", "light"],
   },
   theme: {
     extend: {
@@ -22,5 +20,6 @@ const config: Config = {
       },
     },
   },
+  plugins: [daiyui],
 };
 export default config;
