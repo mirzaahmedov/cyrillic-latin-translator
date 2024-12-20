@@ -94,7 +94,7 @@ export default function Home() {
                 className="label text-slate-700 dark:text-slate-300"
               >
                 <mark className="text-3xl font-bold align-middle mx-2 leading-[0.5] bg-primary dark:text-white">
-                  '
+                  &apos;
                 </mark>{" "}
                 belgisini avtomatik tarzda{" "}
                 <mark className="text-3xl font-bold align-middle mx-2 leading-[0.5] bg-primary dark:text-white">
