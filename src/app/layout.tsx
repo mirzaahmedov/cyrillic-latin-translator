@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="uz" data-theme="light">
       <body className={twMerge(inter.className, "flex flex-col")}>
         <Header />
         <NuqsAdapter>
