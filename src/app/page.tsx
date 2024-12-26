@@ -49,10 +49,10 @@ export default function Home() {
           <Button
             variant="primary"
             onClick={() => {
-              setTranslate((prev) =>
+              void setTranslate((prev) =>
                 prev === "cyrillic" ? "latin" : "cyrillic"
               );
-              setText(translated);
+              void setText(translated);
             }}
           >
             <IconArrowsExchange />
