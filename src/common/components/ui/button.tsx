@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 
-import type { ButtonHTMLAttributes } from "react";
+import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
 const buttonVariants = cva(
@@ -16,18 +16,20 @@ const buttonVariants = cva(
   }
 );
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonVariants>;
-const Button = ({ children, className, variant, ...props }: ButtonProps) => {
-  return (
-    <button
-      {...props}
-      className={twMerge(buttonVariants({ variant }), className)}
-    >
-      {children}
-    </button>
-  );
-};
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, className, variant, ...props }, ref) => {
+    return (
+      <button
+        {...props}
+        ref={ref}
+        className={twMerge(buttonVariants({ variant }), className)}
+      >
+        {children}
+      </button>
+    );
+  }
+);
 
-export { Button };
-export type { ButtonProps };
+Button.displayName = "Button";

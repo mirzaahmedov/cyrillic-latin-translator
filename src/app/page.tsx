@@ -10,6 +10,7 @@ import {
 
 import { ClipboardButton } from "@common/components";
 import { HiddenKeywords } from "./components/hidden-keywords";
+import { HistoryDialog } from "@common/components/history-dialog";
 import { IconArrowsExchange } from "@tabler/icons-react";
 import { Translator } from "@common/utils/translator";
 import { defaultText } from "./config";
@@ -67,7 +68,7 @@ export default function Home() {
           <div className="relative">
             <TextArea
               autoFocus
-              rows={20}
+              rows={15}
               spellCheck={false}
               autoCorrect="off"
               value={text}
@@ -112,7 +113,7 @@ export default function Home() {
               readOnly
               spellCheck={false}
               autoCorrect="off"
-              rows={20}
+              rows={15}
               value={translated}
               className="w-full"
             />
@@ -122,6 +123,9 @@ export default function Home() {
             />
           </div>
         </div>
+      </div>
+      <div>
+        <HistoryDialog />
       </div>
       <HiddenKeywords />
     </main>
