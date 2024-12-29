@@ -12,8 +12,8 @@ export const useHistoryStore = create(
     (set, get) => ({
       history: [],
       addHistory: (item) => {
-        if (get().history.includes(item)) return;
-        set((state) => ({ history: [...state.history, item] }));
+        if (get().history.includes(item) || !item.trim()) return;
+        set({ history: [...get().history, item] });
       },
       removeHistory: (item) => {
         set({ history: get().history.filter((elem) => elem !== item) });
