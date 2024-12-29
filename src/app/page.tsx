@@ -14,6 +14,7 @@ import { HistoryDialog } from "@common/components/history-dialog";
 import { IconArrowsExchange } from "@tabler/icons-react";
 import { Translator } from "@common/utils/translator";
 import { defaultText } from "./config";
+import { useHistoryStore } from "@common/store/history";
 
 const translator = new Translator();
 
@@ -34,6 +35,9 @@ export default function Home() {
     "auto_apostrophe",
     parseAsBoolean.withDefault(false)
   );
+
+  const { history, addHistory, removeHistory, clearHistory } =
+    useHistoryStore();
 
   const translated =
     translate === "cyrillic"
@@ -74,6 +78,7 @@ export default function Home() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               className="w-full"
+              onBlur={(e) => addHistory(e.target.value)}
             />
             <ClipboardButton
               text={text}
@@ -124,8 +129,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>
-        <HistoryDialog />
+      <div className="flex justify-center mt-2.5">
+        <HistoryDialog
+          history={history}
+          onClear={clearHistory}
+          onRemove={removeHistory}
+          onSelect={setText}
+        />
       </div>
       <HiddenKeywords />
     </main>

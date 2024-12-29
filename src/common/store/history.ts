@@ -3,15 +3,21 @@ import { persist } from "zustand/middleware";
 
 type HistoryStore = {
   history: string[];
-  addHistory: (history: string) => void;
+  addHistory: (item: string) => void;
+  removeHistory: (item: string) => void;
   clearHistory: () => void;
 };
 export const useHistoryStore = create(
   persist<HistoryStore>(
-    (set) => ({
+    (set, get) => ({
       history: [],
-      addHistory: (history) =>
-        set((state) => ({ history: [...state.history, history] })),
+      addHistory: (item) => {
+        if (get().history.includes(item)) return;
+        set((state) => ({ history: [...state.history, item] }));
+      },
+      removeHistory: (item) => {
+        set({ history: get().history.filter((elem) => elem !== item) });
+      },
       clearHistory: () => set({ history: [] }),
     }),
     {
