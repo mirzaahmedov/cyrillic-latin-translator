@@ -112,7 +112,6 @@ export default function Home() {
           <div className="relative">
             <TextArea
               autoFocus
-              defaultValue={defaultText}
               ref={textareaRef}
               spellCheck={false}
               autoCorrect="off"
