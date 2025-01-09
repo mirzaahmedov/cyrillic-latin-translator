@@ -4,6 +4,7 @@ export class Translator {
       return "";
     }
 
+    input = input.replaceAll("‘", "ʻ");
     if (autoApostrophe) {
       input = input.replaceAll("'", "ʻ");
     }

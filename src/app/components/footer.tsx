@@ -32,6 +32,9 @@ function Footer() {
           <li>
             <Link href="/kirill-alifbosi">Kirill alifbosi</Link>
           </li>
+          <li>
+            <Link href="/about">Ushbu ilova xaqida</Link>
+          </li>
         </ul>
       </div>
       <div className="p-10 flex flex-col lg:flex-row gap-10 items-center justify-between">
