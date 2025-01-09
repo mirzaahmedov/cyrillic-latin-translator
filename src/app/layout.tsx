@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uz" data-theme="light">
+    <html lang="uz" data-theme="light" className="scrollbar">
       <body className={twMerge(inter.className, "flex flex-col")}>
         <Header />
         <NuqsAdapter>

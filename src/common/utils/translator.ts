@@ -8,9 +8,10 @@ export class Translator {
       input = input.replaceAll("'", "ʻ");
     }
 
-    for (const [cyrill, latin] of Object.entries(mappedLetters).sort(
-      (a, b) => b[0].length - a[0].length
-    )) {
+    const mappings = Object.entries(mappedLetters).sort(
+      (a, b) => b[1].length - a[1].length
+    );
+    for (const [cyrill, latin] of mappings) {
       if (latin === "") {
         continue;
       }
@@ -32,9 +33,10 @@ export class Translator {
       return "";
     }
 
-    for (const [cyrill, latin] of Object.entries(mappedLetters).sort(
+    const mappings = Object.entries(mappedLetters).sort(
       (a, b) => b[0].length - a[0].length
-    )) {
+    );
+    for (const [cyrill, latin] of mappings) {
       input = input.replaceAll(cyrill, latin);
     }
     return input;
@@ -54,8 +56,8 @@ export const mappedLetters = {
   ю: "yu",
   Я: "Ya",
   я: "ya",
-  Ў: "O‘",
-  ў: "o‘",
+  Ў: "Oʻ",
+  ў: "oʻ",
   Ғ: "Gʻ",
   ғ: "gʻ",
   А: "A",

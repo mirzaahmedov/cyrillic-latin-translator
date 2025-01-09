@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import daisyui from "daisyui";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -9,6 +10,18 @@ const config: Config = {
   },
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: "#3182ce",
+              "&:hover": {
+                color: "#2c5282",
+              },
+            },
+          },
+        },
+      },
       colors: {
         primary: "var(--color-primary)",
         "primary-foreground": "var(--color-primary-foreground)",
@@ -20,6 +33,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [daisyui],
+  plugins: [daisyui, typography],
 };
 export default config;

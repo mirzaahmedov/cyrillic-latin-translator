@@ -3,6 +3,7 @@
 import { GithubLogo, LinkedinLogo, TelegramLogo } from "@phosphor-icons/react";
 
 import { Button } from "@common/components/ui";
+import Link from "next/link";
 
 const socialLinks = [
   {
@@ -21,7 +22,18 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer>
+    <footer className="mt-10 bg-slate-100 dark:bg-black/10">
+      <div className="px-5 pt-10 mx-auto w-full max-w-5xl prose prose-slate dark:prose-invert">
+        <h3 className="uppercase">Foydali ma&apos;lumotlar</h3>
+        <ul className="mt-5">
+          <li>
+            <Link href="/lotin-alifbosi">Oʻzbek lotin alifbosi</Link>
+          </li>
+          <li>
+            <Link href="/kirill-alifbosi">Kirill alifbosi</Link>
+          </li>
+        </ul>
+      </div>
       <div className="p-10 flex flex-col lg:flex-row gap-10 items-center justify-between">
         <div>
           <h3 className="text-sm text-neutral-500">

@@ -32,9 +32,12 @@ export const HistoryDialog = ({
           Tarjimalar tarixi
         </Button>
       </Dialog.Trigger>
-      <Dialog.Content>
+      <Dialog.Content className="w-full max-w-3xl h-full max-h-[600px] flex flex-col">
         <Dialog.Title>Tarjimalar tarixi</Dialog.Title>
-        <Accordion.Root type="multiple" className="mt-3">
+        <Accordion.Root
+          type="multiple"
+          className="flex-1 overflow-y-auto scrollbar mt-3"
+        >
           {history.length > 0 ? (
             history.map((item, index) => (
               <Accordion.Item value={index.toString()} key={index}>

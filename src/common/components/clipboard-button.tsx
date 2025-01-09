@@ -6,10 +6,12 @@ import { twMerge } from "tailwind-merge";
 
 type ClipboardButtonProps = ButtonProps & {
   text: string;
+  onCopied?: (text: string) => void;
 };
 const ClipboardButton = ({
   text,
   className,
+  onCopied,
   ...props
 }: ClipboardButtonProps) => {
   const timeoutRef = useRef<NodeJS.Timeout>();
@@ -31,6 +33,7 @@ const ClipboardButton = ({
   const handleCopy = async () => {
     await navigator.clipboard.writeText(text);
     setCopied(true);
+    onCopied?.(text);
   };
 
   return (

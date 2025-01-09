@@ -8,10 +8,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        ghost: "hover:bg-slate-100 hover:dark:bg-neutral-800 text-slate-400",
         primary: "bg-blue-500 hover:bg-blue-700 text-white",
         outline:
           "bg-white dark:bg-neutral-800 hover:bg-slate-100 dark:hover:bg-neutral-700 border border-slate-200 dark:border-neutral-600 text-slate-400",
       },
+    },
+    defaultVariants: {
+      variant: "ghost",
     },
   }
 );
