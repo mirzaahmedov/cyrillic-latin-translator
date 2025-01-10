@@ -31,7 +31,7 @@ const useTextStore = create(
         }),
     }),
     {
-      name: "translation-text",
+      name: "text",
     }
   )
 );
