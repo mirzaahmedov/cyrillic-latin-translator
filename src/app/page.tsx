@@ -9,7 +9,6 @@ import { HistoryDialog } from "@common/components/history-dialog";
 import { IconArrowsExchange } from "@tabler/icons-react";
 import { Translator } from "@common/utils/translator";
 import { create } from "zustand";
-import { defaultText } from "./config";
 import { persist } from "zustand/middleware";
 import { useHistoryStore } from "@common/store/history";
 import { useRef } from "react";
