@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Kirill-Lotin tarjimon | Кирил-Лотин таржимон",
   description:
     "Matnni kirill alifbosidan lotin alifbosiga va lotin alifbosidan kirill alifbosiga o'tkazish. Матнни кирил алифбосидан лотин алифбосига ва лотин алифбосидан кирил алифбосига ўтказиш",
+  other: {
+    "yandex-verification": "9b191201fde36edd",
+  },
 };
 
 export default function RootLayout({
